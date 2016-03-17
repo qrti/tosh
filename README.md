@@ -30,12 +30,12 @@ The example is configured as mp3 player, featuring [> cmus <](https://cmus.githu
 
 ----------
 
-|   |   |   |   |
-|---|---|---|---|
+|   |   |   |   |   |
+|---|---|---|---|---|
 |         |          |       |       | 
 | library | copy     | files | hide  | 
 | -       | -        | -     | exit  | 
-| window  | remove   |       |       |
+| window  | remove   | -     | -     |
 | -       | -        | -     | -     | 
 | expand  | previous | next  | up    |
 | -       | back     | fwd   | (rep) | 
