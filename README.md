@@ -32,9 +32,12 @@ The example is configured as mp3 player, featuring [> cmus <](https://cmus.githu
 
 | 0  |   |   |   |
 |---|---|---|---|
+|         |          |       |       | 
 | library | copy     | files | hide  | 
 |         |          |       | exit  | 
-|         |          |       |       |
 | window  | remove   |       |       |
+|         |          |       |       | 
 | expand  | previous | next  | up    |
+|         | back     | fwd   | (rep) | 
 | stop    | pause    | play  | down  |
+|         |          |       | (rep) | 
