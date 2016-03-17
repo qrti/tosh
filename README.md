@@ -4,7 +4,7 @@
 
 ![tosh with cmus](https://github.com/qrti/tosh/blob/master/images/screen.png)
 
-The example is configured as mp3 player, featuring [-> cmus](https://cmus.github.io/)
+The example is configured as mp3 player, featuring [> cmus <](https://cmus.github.io/)
 
 ----------
 
