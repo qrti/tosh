@@ -34,10 +34,10 @@ The example is configured as mp3 player, featuring [> cmus <](https://cmus.githu
 |---|---|---|---|
 |         |          |       |       | 
 | library | copy     | files | hide  | 
-|         |          |       | exit  | 
+| -       | -        | -     | exit  | 
 | window  | remove   |       |       |
-| -       |          |       |       | 
+| -       | -        | -     | -     | 
 | expand  | previous | next  | up    |
-|         | back     | fwd   | (rep) | 
+| -       | back     | fwd   | (rep) | 
 | stop    | pause    | play  | down  |
-|         |          |       | (rep) | 
+| -       | -        | -     | (rep) | 
