@@ -29,8 +29,8 @@ The example is configured as mp3 player, featuring [> cmus <](https://cmus.githu
 
 ----------
 
-####[> cmus <](https://cmus.github.io/) configuration
-see [++config.ini++](https://github.com/qrti/tosh/blob/master/source/comfig.ini)
+####[cmus](https://cmus.github.io/) configuration
+see [config.ini](https://github.com/qrti/tosh/blob/master/source/comfig.ini)
 
 **key press symbols and functions**
 
@@ -63,7 +63,7 @@ see [++config.ini++](https://github.com/qrti/tosh/blob/master/source/comfig.ini)
 |pause                    |c     |
 |play                     |RETURN|
 
-[++cmus funtions and keys++](https://github.com/cmus/cmus/blob/master/Doc/cmus.txt)
+[cmus functions and keys](https://github.com/cmus/cmus/blob/master/Doc/cmus.txt)
 
 
 
