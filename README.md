@@ -1,4 +1,4 @@
-# **Tosh** - **T**ouch **o**n **Sh**ell
+# **Tosh** - Touch on Shell
 
 #### **Adds touch screen abilities on shell level for Raspberry Pi**
 
