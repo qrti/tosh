@@ -8,23 +8,35 @@
 
 Example configured as mp3 player, featuring [> cmus <](https://cmus.github.io/)
 
-**Configurable**
+**highly configurable**
 
- - grid
- - symbols
+ - overlay grid
+ - overlay symbols
+ - colors and alpha
  - commands
- - colors with alpha
  - start app
 
 - - -
 
-**Preperation**
-- [optionally install cmus to your RasPi](#install-cmus)
-- download from github
-- copy to /home/tosh on RasPi
-- compile with make
+**preperation**
 
-**Tested**
+- check for proper [LCD and touch configuration](#lcd-and-touch-configuration)
+- optionally [Install cmus](#install-cmus)
+
+**installation**
+
+- download repository from github
+- unzip and copy to RasPi
+  for example to: /home/tosh
+- compile with `$make`
+- run with`$sudo ./tosh`
+
+**expansion**
+
+- or [run without sudo](#run-without-sudo)
+- for defining own styles see [Configuration](#configuration)
+
+**tested**
 
  - Raspbian Jessie Lite
  - Raspberry Pi 2 B
@@ -32,17 +44,33 @@ Example configured as mp3 player, featuring [> cmus <](https://cmus.github.io/)
  - SainSmart 480 x 320 LCD
  - WaveShare 480 x 320 LCD
 
-**Not Tested**
+**not Tested**
 
 - Raspbian Jessie full desktop
 
+- - -
+
+#### LCD and Touch Configuration
+
+Be sure that your touchscreen is set as input device, if not present, add the following line and reboot
+`$sudo nano /boot/config.txt`
+dtoverlay=ads7846,speed=500000,penirq=17
+
+To check your input devices enter
+`$cat /proc/bus/input/devices`
 
 - - -
 
+#### Run without sudo
+
+- - -
 
 #### Configuration
 
+Configuration is done in [config.ini](https://github.com/qrti/tosh/blob/master/source/comfig.ini). Grid size, tiles, shapes, colors, commands, start app, command line and some flags can be set. Instructions are given in the example file's comments.
+
 **key press symbols and functions**
+used for cmus
 
 ![tosh with cmus](https://github.com/qrti/tosh/blob/master/images/screen02.png)
 
@@ -54,7 +82,8 @@ Example configured as mp3 player, featuring [> cmus <](https://cmus.github.io/)
 |stop<br>-   |pause<br>-   |play<br>-   |down<br>down+|*short<br>long*|
 \+ repeat
 
-**cmus functions and keys**
+**functions and keys**
+used for cmus
 
 |function                 |key   |
 |-------------------------|------|
@@ -62,9 +91,9 @@ Example configured as mp3 player, featuring [> cmus <](https://cmus.github.io/)
 |copy from file to library|a     |
 |quit                     |qy    |
 |file view                |5     |
-|window change            |TAB   |
+|window change            |tab   |
 |remove from library      |D     |
-|expand library entry     |SPACE |
+|expand library entry     |space |
 |previous track           |z     |
 |back seek                |h     |
 |next track               |b     |
@@ -73,25 +102,15 @@ Example configured as mp3 player, featuring [> cmus <](https://cmus.github.io/)
 |down entry               |j     |
 |stop                     |v     |
 |pause                    |c     |
-|play                     |RETURN|
+|play / choose entry      |return|
 
-see [source/config.ini](https://github.com/qrti/tosh/blob/master/source/comfig.ini)
-
-complete list of [cmus functions and keys](https://github.com/cmus/cmus/blob/master/Doc/cmus.txt)
+Complete list of [cmus functions and keys](https://github.com/cmus/cmus/blob/master/Doc/cmus.txt)
 
 - - -
 
 #### Install cmus
 
+- - -
 
-
-
-
-
-
-
-
-
-
-
-
+#### Copyright (C) 2016
+[qrt@qland.de](mailto:qrt@qland.de)
