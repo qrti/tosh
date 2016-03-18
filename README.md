@@ -19,7 +19,7 @@ Example configured as mp3 player, featuring [> cmus <](https://cmus.github.io/)
 - - -
 
 **Preperation**
-- [optionally install cmus to your RasPi](#Install cmus)
+- [optionally install cmus to your RasPi](#### Install cmus)
 - download from github
 - copy to /home/tosh on RasPi
 - compile with make
