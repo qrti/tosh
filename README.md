@@ -44,7 +44,7 @@ Example configured as mp3 player, featuring [> cmus <](https://cmus.github.io/)
  - SainSmart 480 x 320 LCD
  - WaveShare 480 x 320 LCD
 
-**not Tested**
+**not tested**
 
 - Raspbian Jessie full desktop
 
@@ -69,7 +69,7 @@ To check your input devices enter
 
 Configuration is done in [config.ini](https://github.com/qrti/tosh/blob/master/source/comfig.ini). Grid size, tiles, shapes, colors, commands, start app, command line and some flags can be set. Instructions are given in the example file's comments.
 
-**key press symbols and functions**
+**key press symbols and functions**  
 used for cmus
 
 ![tosh with cmus](https://github.com/qrti/tosh/blob/master/images/screen02.png)
@@ -82,7 +82,7 @@ used for cmus
 |stop<br>-   |pause<br>-   |play<br>-   |down<br>down+|*short<br>long*|
 \+ repeat
 
-**functions and keys**
+**functions and keys**  
 used for cmus
 
 |function                 |key   |
