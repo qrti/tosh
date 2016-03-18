@@ -1,12 +1,12 @@
 # Tosh - Touch on Shell
 
+##`>>> under construction <<<`
+
 #### **Adds touch screen abilities on shell level for Raspberry Pi**
 
 ![tosh with cmus](https://github.com/qrti/tosh/blob/master/images/screen01.png)
 
 Example configured as mp3 player, featuring [> cmus <](https://cmus.github.io/)
-
-- - -
 
 **Configurable**
 
@@ -19,13 +19,10 @@ Example configured as mp3 player, featuring [> cmus <](https://cmus.github.io/)
 - - -
 
 **Preperation**
-- [optionally install cmus to your RasPi](#### Install cmus)
+- [optionally install cmus to your RasPi](#install-cmus)
 - download from github
 - copy to /home/tosh on RasPi
 - compile with make
-
-
-- - -
 
 **Tested**
 
@@ -43,8 +40,7 @@ Example configured as mp3 player, featuring [> cmus <](https://cmus.github.io/)
 - - -
 
 
-####[cmus](https://cmus.github.io/) configuration
-see [source/config.ini](https://github.com/qrti/tosh/blob/master/source/comfig.ini)
+#### Configuration
 
 **key press symbols and functions**
 
@@ -79,16 +75,14 @@ see [source/config.ini](https://github.com/qrti/tosh/blob/master/source/comfig.i
 |pause                    |c     |
 |play                     |RETURN|
 
-[complete list of cmus functions and keys](https://github.com/cmus/cmus/blob/master/Doc/cmus.txt)
+see [source/config.ini](https://github.com/qrti/tosh/blob/master/source/comfig.ini)
+
+complete list of [cmus functions and keys](https://github.com/cmus/cmus/blob/master/Doc/cmus.txt)
 
 - - -
 
-
 #### Install cmus
 
-
-
-[TOC]
 
 
 
