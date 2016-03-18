@@ -2,7 +2,7 @@
 
 #### **Adds touch screen abilities on shell level for Raspberry Pi**
 
-![tosh with cmus](https://github.com/qrti/tosh/blob/master/images/screen.png)
+![tosh with cmus](https://github.com/qrti/tosh/blob/master/images/screen01.png)
 
 The example is configured as mp3 player, featuring [> cmus <](https://cmus.github.io/)
 
@@ -30,9 +30,11 @@ The example is configured as mp3 player, featuring [> cmus <](https://cmus.githu
 ----------
 
 ####[cmus](https://cmus.github.io/) configuration
-see [config.ini](https://github.com/qrti/tosh/blob/master/source/comfig.ini)
+see [source/config.ini](https://github.com/qrti/tosh/blob/master/source/comfig.ini)
 
 **key press symbols and functions**
+
+![tosh with cmus](https://github.com/qrti/tosh/blob/master/images/screen01.png)
 
 |key press      |            |             |            |             |
 |---------------|------------|-------------|------------|-------------|
