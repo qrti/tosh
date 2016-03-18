@@ -4,7 +4,7 @@
 
 ![tosh with cmus](https://github.com/qrti/tosh/blob/master/images/screen01.png)
 
-The example is configured as mp3 player, featuring [> cmus <](https://cmus.github.io/)
+Example configured as mp3 player, featuring [> cmus <](https://cmus.github.io/)
 
 ----------
 
@@ -34,7 +34,7 @@ see [source/config.ini](https://github.com/qrti/tosh/blob/master/source/comfig.i
 
 **key press symbols and functions**
 
-![tosh with cmus](https://github.com/qrti/tosh/blob/master/images/screen01.png)
+![tosh with cmus](https://github.com/qrti/tosh/blob/master/images/screen02.png)
 
 |key press      |            |             |            |             |
 |---------------|------------|-------------|------------|-------------|
