@@ -98,7 +98,7 @@ complete list of [cmus functions and keys](https://github.com/cmus/cmus/blob/mas
 
 #### Install cmus
 
-install cmus without recomends to prevent some dnet-common and libdnet trouble  
+install cmus without recommends to prevent some dnet-common and libdnet trouble  
 `$ sudo aptitude -R install cmus`
 
 if you need ffmpeg  
@@ -117,7 +117,7 @@ to auto resume cmus
 set resume=true
 
 to auto login your Raspberry Pi  
-`$ sudo raspi-config`
+`$ sudo raspi-config`  
 Boot Options / Console Autologin
 
 `$ nano ~/.bashrc`  
