@@ -118,19 +118,19 @@ if your run into trouble with dnet-common and libdnet
 `$ sudo apt-get purge libdnet dnet-common`
 
 to auto resume cmus  
-`$ nano ~/.cmus/rc`  
+`$ nano ~/.cmus/rc`
 ```
 set resume=true
 ```
 
 to auto login your Raspberry Pi  
-`$ sudo raspi-config`  
+`$ sudo raspi-config`
 ```
 Boot Options / Console Autologin
 ```
 
 autostart after login  
-`$ nano ~/.bashrc`  
+`$ nano ~/.bashrc`
 ```
 cd ~/tosh  
 sudo ./tosh
@@ -146,8 +146,10 @@ if your LCD does not run on Raspbian *Lite* yet, follow the steps given at
 Raspian *Full* versions with X-Windows have not been tested with Tosh yet
 
 also be sure that your touchscreen is set as input device, add the following line if necessary and reboot  
-`$ sudo nano /boot/config.txt`  
-dtoverlay=ads7846,speed=500000,penirq=17  
+`$ sudo nano /boot/config.txt`
+```
+dtoverlay=ads7846,speed=500000,penirq=17
+```
 `$ sudo reboot`
 
 to check your input devices enter  
@@ -177,19 +179,23 @@ be sure SPI is enabled
 `$ sudo raspi-config`  
 advanced options/spi - enabled yes  
 *or*  
-`$ sudo nano /boot/config.txt`  
+`$ sudo nano /boot/config.txt`
+```
 dtparam=spi=on
+```
 
 the following settings are for SainSmart and WaveShare 480 x 320 displays, depending on your device values may differ
 
 first check the modules.conf, it should look something like this  
-`$ sudo nano /etc/modules-load.d/modules.conf`  
+`$ sudo nano /etc/modules-load.d/modules.conf`
+```
 snd-bcm2835  
 i2c-bcm2708  
 i2c-dev  
 spi_bcm2835  
 flexfb  
-fbtft_device  
+fbtft_device
+```
 
 check flexfb.conf for *SainSmart*  
 `$ sudo nano /etc/modprobe.d/flexfb.conf`
@@ -210,17 +216,21 @@ options ads7846_device model=7846 cs=1 gpio_pendown=17 keep_vref_on=1 swap_xy=1 
 with these values the displays are in landscape mode, Raspberry Pi board power plug on top side
 
 now check cmdline.txt  
-`$ sudo nano /boot/cmdline.txt`  
+`$ sudo nano /boot/cmdline.txt`
+```
 dwc_otg.lpm_enable=0 console=tty1 console=ttyAMA0,115200 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline rootwait fbcon=map:11 fbcon=font:ProFont6x11 fsck.repair=yes root wait
+```
 
 the output looks much better if you slim the console font  
 `$ sudo dpkg-reconfigure console-setup`  
 UTF-8 / Guess optimal character set / Terminus / 8 x 14  
 *or*  
-`$ sudo nano /etc/default/console-setup`  
+`$ sudo nano /etc/default/console-setup`
+```
 CODESET="guess"  
 FONTFACE="Terminus"  
-FONTSIZE="8x14"  
+FONTSIZE="8x14"
+```
 
 restart console to see changes  
 `$ sudo /etc/init.d/console-setup restart`
