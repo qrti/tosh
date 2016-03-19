@@ -108,9 +108,7 @@ install cmus without recommends to prevent some dnet-common and libdnet trouble
 
 if you need ffmpeg  
 `$ sudo aptitude install cmus-plugin-ffmpeg`
-
-or
-
+or  
 install cmus comletely  
 `$ sudo apt-get install cmus`
 
