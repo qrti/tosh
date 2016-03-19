@@ -21,7 +21,7 @@ Example configured as mp3 player, featuring [> cmus <](https://cmus.github.io/)
 **installation**
 
 - download repository from github
-- unzip and copy to RasPi
+- unzip and copy to Raspberry Pi  
   for example to: /home/tosh
 - compile with  
   `$make`
@@ -40,8 +40,8 @@ Example configured as mp3 player, featuring [> cmus <](https://cmus.github.io/)
  - Raspbian Jessie *Lite*
  - Raspberry Pi 2 B
  - Raspberry Pi B+
- - SainSmart 480 x 320 LCD
- - WaveShare 480 x 320 LCD
+ - SainSmart LCD 480 x 320
+ - WaveShare LCD 480 x 320
 
 **not tested**
 
@@ -57,7 +57,7 @@ Example configured as mp3 player, featuring [> cmus <](https://cmus.github.io/)
 
 #### Dashboard Configuration
 
-dashboard configuration is done in [config.ini](https://github.com/qrti/tosh/blob/master/source/comfig.ini), grid size, tiles, shapes, colors, commands, start app, command line and some flags can be set, instructions are given in the example file's comments
+dashboard configuration is done in [config.ini](https://github.com/qrti/tosh/blob/master/source/comfig.ini), grid size, tiles, shapes, colors, commands, start app, command line and some flags can be set, instructions are given in the comments
 
 **symbols and functions** (used in example)
 
@@ -142,7 +142,7 @@ advanced options/spi - enabled yes
 `$sudo nano /boot/config.txt`  
 dtparam=spi=on
 
-the following setings are for SainSmart and WaveShare 480 x 320 displays, depending on your device values may differ
+the following settings are for SainSmart and WaveShare 480 x 320 displays, depending on your device values may differ
 
 first check the modules.conf, it should look something like this  
 `$sudo nano /etc/modules-load.d/modules.conf`  
