@@ -111,7 +111,7 @@ if your LCD does not run on Raspbian *Lite* yet, follow the steps given at
 Raspian *Full* versions with X-Windows have not been tested with Tosh yet
 
 also be sure that your touchscreen is set as input device, add the following line if necessary and reboot  
-`$sudo nano /boot/config.txt`
+`$sudo nano /boot/config.txt`  
 dtoverlay=ads7846,speed=500000,penirq=17  
 `$sudo reboot`
 
@@ -129,8 +129,7 @@ check for current updates
 `$sudo apt-get upgrade`  
 `$sudo apt-get clean`  
 
-in order to do a firmware update that covers LCD framebuffer support, add rpi update script, current Raspbian versions with built in framebuffer support may make this step unnecessary
-
+in order to do a firmware update that covers LCD framebuffer support, add rpi update script, current Raspbian versions with built in framebuffer support may make this step unnecessary  
 `$sudo apt-get update`  
 `$sudo apt-get install git`  
 `$sudo wget https://raw.github.com/Hexxeh/rpi-update/master/rpi-update -O /usr/bin/rpi-update && sudo chmod +x /usr/bin/rpi-update`
