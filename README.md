@@ -109,7 +109,7 @@ install cmus without recommends to prevent some dnet-common and libdnet trouble
 if you need ffmpeg  
 `$ sudo aptitude install cmus-plugin-ffmpeg`
 
-*or*
+or
 
 install cmus comletely  
 `$ sudo apt-get install cmus`
@@ -177,8 +177,8 @@ now that we have the script, update the firmware and reboot
 
 be sure SPI is enabled  
 `$ sudo raspi-config`  
-advanced options/spi - enabled yes  
-*or*  
+*advanced options/spi - enabled yes*  
+or  
 `$ sudo nano /boot/config.txt`
 ```
 dtparam=spi=on
@@ -223,8 +223,8 @@ dwc_otg.lpm_enable=0 console=tty1 console=ttyAMA0,115200 root=/dev/mmcblk0p2 roo
 
 the output looks much better if you slim the console font  
 `$ sudo dpkg-reconfigure console-setup`  
-UTF-8 / Guess optimal character set / Terminus / 8 x 14  
-*or*  
+*UTF-8 / Guess optimal character set / Terminus / 8 x 14*  
+or  
 `$ sudo nano /etc/default/console-setup`
 ```
 CODESET="guess"  
