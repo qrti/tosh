@@ -16,9 +16,9 @@ Example configured as mp3 player, featuring [> cmus <](https://cmus.github.io/)
 - - -
 
 **preperation**
-- for proper configured LCD and touch visit
+- for proper configured LCD and touch visit  
   [LCD and Touch Config](#lcd-and-touch-config)
-- optionally 
+- optionally  
   [Install cmus](#install-cmus)
 
 **installation**
@@ -26,16 +26,16 @@ Example configured as mp3 player, featuring [> cmus <](https://cmus.github.io/)
 - download repository from github
 - unzip and copy to RasPi
   for example to: /home/tosh
-- compile with 
+- compile with  
   `$make`
-- run with
+- run with  
   `$sudo ./tosh`
 
 **expansion**
 
-- to run without sudo see
+- to run without sudo see  
   [Run without sudo](#run-without-sudo)
-- for own dashboard configurations see
+- for own dashboard configurations see  
   [Dashboard Configuration](#dashboard-configuration)
 
 **tested**
@@ -48,7 +48,7 @@ Example configured as mp3 player, featuring [> cmus <](https://cmus.github.io/)
 
 **not tested**
 
-- Raspbian Jessie *Full* Desktop
+- Raspbian Jessie *Full* Desktop  
   X-Windows may catch touch events
 
 - - -
