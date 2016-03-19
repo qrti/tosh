@@ -119,16 +119,22 @@ if your run into trouble with dnet-common and libdnet
 
 to auto resume cmus  
 `$ nano ~/.cmus/rc`  
+```
 set resume=true
+```
 
 to auto login your Raspberry Pi  
 `$ sudo raspi-config`  
+```
 Boot Options / Console Autologin
+```
 
 autostart after login  
 `$ nano ~/.bashrc`  
+```
 cd ~/tosh  
 sudo ./tosh
+```
 
 - - -
 
