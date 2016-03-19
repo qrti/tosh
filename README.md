@@ -10,9 +10,6 @@ Configure dashboard, grid, shapes, colors and alpha, commands, start app ...
 
 Example configured as mp3 player, featuring [> cmus <](https://cmus.github.io/)
 
-
-
-
 - - -
 
 **preperation**
@@ -33,9 +30,9 @@ Example configured as mp3 player, featuring [> cmus <](https://cmus.github.io/)
 
 **expansion**
 
-- to run without sudo see  
+- to run without sudo  
   [Run without sudo](#run-without-sudo)
-- for own dashboard configurations see  
+- for own dashboard configurations  
   [Dashboard Configuration](#dashboard-configuration)
 
 **tested**
@@ -60,7 +57,7 @@ Example configured as mp3 player, featuring [> cmus <](https://cmus.github.io/)
 
 #### Dashboard Configuration
 
-dashboard configuration is done in [config.ini](https://github.com/qrti/tosh/blob/master/source/comfig.ini). Grid size, tiles, shapes, colors, commands, start app, command line and some flags can be set. Instructions are given in the example file's comments.
+dashboard configuration is done in [config.ini](https://github.com/qrti/tosh/blob/master/source/comfig.ini), grid size, tiles, shapes, colors, commands, start app, command line and some flags can be set, instructions are given in the example file's comments
 
 **symbols and functions** (used in example)
 
@@ -168,7 +165,7 @@ options flexfb width=480 height=320 regwidth=16 init=-1,0xb0,0x0,-1,0x11,-2,250,
 options fbtft_device debug=3 rotate=0 name=flexfb speed=16000000 gpios=reset:25,dc:24  
 options ads7846_device model=7846 cs=1 gpio_pendown=17 keep_vref_on=1 swap_xy=1 pressure_max=255 x_plate_ohms=60 x_min=200 x_max=3900 y_min=200 y_max=3900
 
-with these values the displays are in landscape mode, Raspberry Pi board power plug top side
+with these values the displays are in landscape mode, Raspberry Pi board power plug on top side
 
 now check cmdline.txt  
 `$sudo nano /boot/cmdline.txt`  
