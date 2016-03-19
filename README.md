@@ -2,9 +2,8 @@
 
 ##`>>> under construction <<<`
 
-#### **Adds touch screen abilities on shell level for Raspberry Pi**
-**Highly configurable overlay, works with nearly every console application**  
-Configure dashboard, grid, shapes, colors and alpha, commands, start app ...
+#### **Adds touch screen abilities on shell level for Raspberry Pi**  
+Overlay dashboard for console applications, low cpu load, highly configurable ...
 
 ![tosh with cmus](https://github.com/qrti/tosh/blob/master/images/screen01.png)
 
