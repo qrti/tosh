@@ -14,15 +14,15 @@ Example configured as mp3 player, featuring [> cmus <](https://cmus.github.io/)
 
 - - -
 
-**preperation**
-- for proper configured LCD and touch visit  
+**preparation**
+- for proper configured LCD and Touch  
   [LCD and Touch Config](#lcd-and-touch-config)
 - optionally  
   [Install cmus](#install-cmus)
 
 **installation**
 
-- download repository from github
+- download repository from GitHub
 - unzip and copy to Raspberry Pi  
   for example to: ~/tosh
 - compile with  
@@ -62,13 +62,13 @@ because Tosh reads from tty and vcsa devices it needs su rights
 
 #### Dashboard Configuration
 
-dashboard configuration is done in [config.ini](https://github.com/qrti/tosh/blob/master/source/comfig.ini), grid size, tiles, shapes, colors, commands, start app, command line and some flags can be set, instructions are given in the comments
+dashboard configuration is done in [config.ini](https://github.com/qrti/tosh/blob/master/source/comfig.ini), grid size, tiles, shapes, colors, commands, start app, command line and some flags can be set, instructions are given in the comments of file
 
-**symbols and functions** (used in example)
+**symbols and functions** (used in config.ini)
 
 ![tosh with cmus](https://github.com/qrti/tosh/blob/master/images/screen02.png)
 
-|function    |function     |function    |function     |key press      |
+|function    |function     |function    |function     |touch          |
 |------------|-------------|------------|-------------|---------------|
 |library<br>-|copy<br>-    |file<br>-   |hide<br>quit |*short<br>long*|
 |window<br>- |remove<br>-  |-<br>-      |-<br>-       |*short<br>long*|
@@ -103,11 +103,11 @@ complete list of [cmus functions and keys](https://github.com/cmus/cmus/blob/mas
 
 #### Install cmus
 
-install cmus without recommends to prevent some dnet-common and libdnet trouble  
+install cmus without recommends to prevent possible dnet-common and libdnet trouble  
 `$ sudo aptitude -R install cmus`
 
 if you need ffmpeg  
-`$ sudo aptitude install cmus-plugin-ffmpeg`
+`$ sudo aptitude install cmus-plugin-ffmpeg`  
 or  
 install cmus comletely  
 `$ sudo apt-get install cmus`
@@ -122,10 +122,8 @@ set resume=true
 ```
 
 to auto login your Raspberry Pi  
-`$ sudo raspi-config`
-```
-Boot Options / Console Autologin
-```
+`$ sudo raspi-config`  
+*Boot Options / Console Autologin*
 
 autostart after login  
 `$ nano ~/.bashrc`
@@ -195,7 +193,9 @@ flexfb
 fbtft_device
 ```
 
-check flexfb.conf for *SainSmart*  
+with the following values the displays are configured to landscape mode, Raspberry Pi board power plug on top side
+
+check flexfb.conf for *SainSmart* display  
 `$ sudo nano /etc/modprobe.d/flexfb.conf`
 ```
 options flexfb width=320 height=480 regwidth=16 init=-1,0xb0,0x0,-1,0x11,-2,250,-1,0x3A,0x55,-1,0xC2,0x44,-1,0xC5,0x00,0x00,0x00,0x00,-1,0xE0,0x0F,0x1F,0x1C,0x0C,0x0F,0x08,0x48,0x98,0x37,0x0A,0x13,0x04,0x11,0x0D,0x00,-1,0xE1,0x0F,0x32,0x2E,0x0B,0x0D,0x05,0x47,0x75,0x37,0x06,0x10,0x03,0x24,0x20,0x00,-1,0xE2,0x0F,0x32,0x2E,0x0B,0x0D,0x05,0x47,0x75,0x37,0x06,0x10,0x03,0x24,0x20,0x00,-1,0x36,0x28,-1,0x11,-1,0x29,-3  
@@ -203,7 +203,7 @@ options fbtft_device debug=3 rotate=90 name=flexfb speed=16000000 gpios=reset:25
 options ads7846_device model=7846 cs=1 gpio_pendown=17 keep_vref_on=1 swap_xy=0 pressure_max=255 x_plate_ohms=60 x_min=200 x_max=3900 y_min=200 y_max=3900
 ```
 
-and for *WaveShare*  
+and for *WaveShare* display  
 `$ sudo nano /etc/modprobe.d/flexfb.conf`  
 ```
 options flexfb width=480 height=320 regwidth=16 init=-1,0xb0,0x0,-1,0x11,-2,250,-1,0x3A,0x55,-1,0xC2,0x44,-1,0xC5,0x00,0x00,0x00,0x00,-1,0xE0,0x0F,0x1F,0x1C,0x0C,0x0F,0x08,0x48,0x98,0x37,0x0A,0x13,0x04,0x11,0x0D,0x00,-1,0xE1,0x0F,0x32,0x2E,0x0B,0x0D,0x05,0x47,0x75,0x37,0x06,0x10,0x03,0x24,0x20,0x00,-1,0xE2,0x0F,0x32,0x2E,0x0B,0x0D,0x05,0x47,0x75,0x37,0x06,0x10,0x03,0x24,0x20,0x00,-1,0x36,0xe8,-1,0x11,-1,0x29,-3  
@@ -211,13 +211,12 @@ options fbtft_device debug=3 rotate=0 name=flexfb speed=16000000 gpios=reset:25,
 options ads7846_device model=7846 cs=1 gpio_pendown=17 keep_vref_on=1 swap_xy=1 pressure_max=255 x_plate_ohms=60 x_min=200 x_max=3900 y_min=200 y_max=3900
 ```
 
-with these values the displays are in landscape mode, Raspberry Pi board power plug on top side
-
-now check cmdline.txt  
+now check cmdline.txt and reboot
 `$ sudo nano /boot/cmdline.txt`
 ```
 dwc_otg.lpm_enable=0 console=tty1 console=ttyAMA0,115200 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline rootwait fbcon=map:11 fbcon=font:ProFont6x11 fsck.repair=yes root wait
 ```
+`$ sudo reboot`
 
 the output looks much better if you slim the console font  
 `$ sudo dpkg-reconfigure console-setup`  
