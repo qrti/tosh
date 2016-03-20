@@ -6,7 +6,7 @@
 
 Overlay dashboard for console applications, low cpu load, highly configurable ...
 
-![tosh with cmus](https://github.com/qrti/tosh/blob/master/images/screen01.png)
+![tosh with cmus](images/screen01.png)
 
 Example configured as mp3 player, featuring [> cmus <](https://cmus.github.io/)
 
@@ -66,7 +66,7 @@ dashboard configuration is done in [config.ini](https://github.com/qrti/tosh/blo
 
 **symbols and functions** (used in config.ini)
 
-![tosh with cmus](https://github.com/qrti/tosh/blob/master/images/screen02.png)
+![tosh with cmus](images/screen02.png)
 
 |function    |function     |function    |function     |touch          |
 |------------|-------------|------------|-------------|---------------|
