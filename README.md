@@ -10,7 +10,7 @@ Overlay dashboard for console applications, low cpu load, highly configurable ..
 
 Example configured as mp3 player, featuring [> cmus <](https://cmus.github.io/)
 
-[Video Demo](http://) on YouTube
+[Tosh with cmus](http://) on YouTube
 
 - - -
 
@@ -62,7 +62,7 @@ because Tosh reads from tty and vcsa devices it needs su rights
 
 #### Dashboard Configuration
 
-dashboard configuration is done in [config.ini](https://github.com/qrti/tosh/blob/master/source/comfig.ini), grid size, tiles, shapes, colors, commands, start app, command line and some flags can be set, instructions are given in the comments of file
+dashboard configuration is done in [config.ini](https://github.com/qrti/tosh/blob/master/source/comfig.ini), grid size, tiles, shapes, colors, commands, start app, command line and some flags can be set, instructions are given in the comments of the file
 
 **symbols and functions** (used in config.ini)
 
@@ -125,7 +125,7 @@ to auto login your Raspberry Pi
 `$ sudo raspi-config`  
 *Boot Options / Console Autologin*
 
-autostart after login  
+autostart Tosh after login  
 `$ nano ~/.bashrc`
 ```
 cd ~/tosh  
@@ -193,9 +193,9 @@ flexfb
 fbtft_device
 ```
 
-with the following values the displays are configured to landscape mode, Raspberry Pi board power plug on top side
+these next values will configure the display to landscape mode, Raspberry Pi board power plug on top side
 
-check flexfb.conf for *SainSmart* display  
+check flexfb.conf for *SainSmart* displays  
 `$ sudo nano /etc/modprobe.d/flexfb.conf`
 ```
 options flexfb width=320 height=480 regwidth=16 init=-1,0xb0,0x0,-1,0x11,-2,250,-1,0x3A,0x55,-1,0xC2,0x44,-1,0xC5,0x00,0x00,0x00,0x00,-1,0xE0,0x0F,0x1F,0x1C,0x0C,0x0F,0x08,0x48,0x98,0x37,0x0A,0x13,0x04,0x11,0x0D,0x00,-1,0xE1,0x0F,0x32,0x2E,0x0B,0x0D,0x05,0x47,0x75,0x37,0x06,0x10,0x03,0x24,0x20,0x00,-1,0xE2,0x0F,0x32,0x2E,0x0B,0x0D,0x05,0x47,0x75,0x37,0x06,0x10,0x03,0x24,0x20,0x00,-1,0x36,0x28,-1,0x11,-1,0x29,-3  
@@ -203,7 +203,7 @@ options fbtft_device debug=3 rotate=90 name=flexfb speed=16000000 gpios=reset:25
 options ads7846_device model=7846 cs=1 gpio_pendown=17 keep_vref_on=1 swap_xy=0 pressure_max=255 x_plate_ohms=60 x_min=200 x_max=3900 y_min=200 y_max=3900
 ```
 
-and for *WaveShare* display  
+and for *WaveShare* displays  
 `$ sudo nano /etc/modprobe.d/flexfb.conf`  
 ```
 options flexfb width=480 height=320 regwidth=16 init=-1,0xb0,0x0,-1,0x11,-2,250,-1,0x3A,0x55,-1,0xC2,0x44,-1,0xC5,0x00,0x00,0x00,0x00,-1,0xE0,0x0F,0x1F,0x1C,0x0C,0x0F,0x08,0x48,0x98,0x37,0x0A,0x13,0x04,0x11,0x0D,0x00,-1,0xE1,0x0F,0x32,0x2E,0x0B,0x0D,0x05,0x47,0x75,0x37,0x06,0x10,0x03,0x24,0x20,0x00,-1,0xE2,0x0F,0x32,0x2E,0x0B,0x0D,0x05,0x47,0x75,0x37,0x06,0x10,0x03,0x24,0x20,0x00,-1,0x36,0xe8,-1,0x11,-1,0x29,-3  
@@ -211,7 +211,7 @@ options fbtft_device debug=3 rotate=0 name=flexfb speed=16000000 gpios=reset:25,
 options ads7846_device model=7846 cs=1 gpio_pendown=17 keep_vref_on=1 swap_xy=1 pressure_max=255 x_plate_ohms=60 x_min=200 x_max=3900 y_min=200 y_max=3900
 ```
 
-now check cmdline.txt and reboot
+now check cmdline.txt and reboot  
 `$ sudo nano /boot/cmdline.txt`
 ```
 dwc_otg.lpm_enable=0 console=tty1 console=ttyAMA0,115200 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline rootwait fbcon=map:11 fbcon=font:ProFont6x11 fsck.repair=yes root wait
