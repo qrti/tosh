@@ -10,7 +10,7 @@ Overlay dashboard for console applications, low cpu load, highly configurable ..
 
 Example configured as mp3 player, featuring [> cmus <](https://cmus.github.io/)
 
-[Tosh with cmus](http://) on YouTube
+[Tosh with cmus](https://youtu.be/OJ_YkjgRMck) on YouTube
 
 - - -
 
@@ -115,6 +115,10 @@ install cmus comletely
 if your run into trouble with dnet-common and libdnet  
 `$ sudo apt-get purge libdnet dnet-common`
 
+- - - 
+
+#### Tips for cmus 
+
 to auto resume cmus  
 `$ nano ~/.cmus/rc`
 ```
@@ -131,6 +135,25 @@ autostart Tosh after login
 cd ~/tosh  
 sudo ./tosh
 ```
+
+common audio output consideration
+- built in audio output
+  already there no extra costs, no need for
+  additional drivers, very poor sound quality,
+  maybe good enough for load music, definitely
+  a no go for classical music
+- USB Sound sticks
+  low price, needs drivers, medium sound quality
+- sound card
+  high price, needs drivers, reserves connectors,
+  blocks other extension cards (LCD etc.),
+  high sound quality
+- HDMI (to VGA) sound splitter,
+  mid price, no need for additional drivers,
+  medium sound quality
+
+in this project HDMI isn't used because of LCD output, so a HDMI to VGA adapter with sound splitter was connected, to make it work properly a fake VGA plug has to be put on the adapters VGA socket, simply all ground pins of the plug must be wired to the plugs housing
+
 
 - - -
 
