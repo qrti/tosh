@@ -10,7 +10,7 @@ Overlay dashboard for console applications, low cpu load, highly configurable ..
 
 Example configured as mp3 player, featuring [> cmus <](https://cmus.github.io/)
 
-[Tosh with cmus](https://youtu.be/OJ_YkjgRMck) on YouTube
+[Tosh with cmus Demo](https://youtu.be/OJ_YkjgRMck) on YouTube
 
 - - -
 
@@ -148,12 +148,13 @@ common audio output consideration
   high price, needs drivers, reserves connectors,
   blocks other extension cards (LCD etc.),
   high sound quality
-- HDMI (to VGA) sound splitter,
+- HDMI sound splitter or HDMI to VGA adapter with sound splitter
   mid price, no need for additional drivers,
   medium sound quality
 
-in this project HDMI isn't used because of LCD output, so a HDMI to VGA adapter with sound splitter was connected, to make it work properly a fake VGA plug has to be put on the adapters VGA socket, simply all ground pins of the plug must be wired to the plugs housing
+in this project HDMI output isn't used because of the LCD-Touch panel, so a low cost HDMI to VGA adapter with sound splitter was connected, to make it work properly a VGA plug has to be put on the adapters VGA socket, the ground pins of the plug must be wired to the plugs housing to fake a cable
 
+![vga plug](images/vga.png)
 
 - - -
 
