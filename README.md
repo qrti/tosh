@@ -64,7 +64,7 @@ check if git installed
 if git is not installed  
 `$ sudo apt-get install git-all`
 
-clone repository  
+clone Tosh repository  
 `$ git clone https://github.com/qrti/tosh.git`
 
 - - -
@@ -272,6 +272,20 @@ FONTSIZE="8x14"
 
 restart console to see changes  
 `$ sudo /etc/init.d/console-setup restart`
+
+- - -
+
+#### Features
+
+- highly configurable
+- works with a wide variety of programs
+- low cpu load
+
+- - -
+
+#### Version History
+
+0.91 initial
 
 - - -
 
