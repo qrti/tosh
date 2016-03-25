@@ -22,9 +22,13 @@ Example configured as mp3 player, featuring [> cmus <](https://cmus.github.io/)
 
 **installation**
 
-- download repository from GitHub
-- unzip and copy to Raspberry Pi  
-  for example to: ~/tosh
+- download repository from GitHub,  
+  unzip and copy to Raspberry Pi
+  (for example to: ~/tosh)
+  or 
+  [Install via git](#install-git-directly)
+- change directory  
+  `cd ~/tosh`
 - compile with  
   `$ make`
 - run with  
@@ -51,6 +55,17 @@ Example configured as mp3 player, featuring [> cmus <](https://cmus.github.io/)
   X-Windows may catch touch events
 
 - - -
+
+#### Install git directly
+
+check if git installed  
+`$ git --version`
+
+if git is not installed  
+`$ sudo apt-get install git-all`
+
+clone repository  
+`$ git clone https://github.com/qrti/tosh.git`
 
 #### Run without sudo
 
@@ -136,23 +151,23 @@ cd ~/tosh
 sudo ./tosh
 ```
 
-common audio output consideration
-- built in audio output
-  already there no extra costs, no need for
-  additional drivers, very poor sound quality,
-  maybe good enough for load music, definitely
-  a no go for classical music
-- USB Sound sticks
-  low price, needs drivers, medium sound quality
-- sound card
-  high price, needs drivers, reserves connectors,
-  blocks other extension cards (LCD etc.),
-  high sound quality
-- HDMI sound splitter or HDMI to VGA adapter with sound splitter
-  mid price, no need for additional drivers,
+audio output consideration
+- built in audio output  
+  already there no extra costs, no need for  
+  additional drivers, very poor sound quality,  
+  maybe good enough for load music, definitely  
+  a no go for classical music  
+- USB Sound sticks  
+  low price, needs drivers, medium sound quality  
+- sound card  
+  high price, needs drivers, reserves connectors,  
+  blocks other extension cards (LCD etc.),  
+  high sound quality b
+- HDMI sound splitter or HDMI to VGA adapter with sound splitter  
+  mid price, no need for additional drivers,  
   medium sound quality
 
-in this project HDMI output isn't used because of the LCD-Touch panel, so a low cost HDMI to VGA adapter with sound splitter was connected, to make it work properly a VGA plug has to be put on the adapters VGA socket, the ground pins of the plug must be wired to the plugs housing to fake a cable
+in this project HDMI output isn't used because of the LCD-Touch panel, so a HDMI to VGA adapter with sound splitter was connected, to make it work properly a VGA plug has to be put on the adapters VGA socket, the ground pins of the plug must be wired to the plugs housing to fake a cable
 
 ![vga plug](images/vga.png)
 
