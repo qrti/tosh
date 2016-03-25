@@ -23,9 +23,9 @@ Example configured as mp3 player, featuring [> cmus <](https://cmus.github.io/)
 **installation**
 
 - download repository from GitHub,  
-  unzip and copy to Raspberry Pi
-  (for example to: ~/tosh)
-  or 
+  unzip and copy to Raspberry Pi  
+  (for example to: ~/tosh)  
+  or  
   [Install via git](#install-git-directly)
 - change directory  
   `cd ~/tosh`
