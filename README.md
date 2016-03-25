@@ -26,7 +26,7 @@ Example configured as mp3 player, featuring [> cmus <](https://cmus.github.io/)
   unzip and copy to Raspberry Pi  
   (for example to: ~/tosh)  
   or  
-  [Install via git](#install-git-directly)
+  [Install git directly](#install-git-directly)
 - change directory  
   `cd ~/tosh`
 - compile with  
@@ -66,6 +66,8 @@ if git is not installed
 
 clone repository  
 `$ git clone https://github.com/qrti/tosh.git`
+
+- - -
 
 #### Run without sudo
 
