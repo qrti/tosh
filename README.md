@@ -41,19 +41,6 @@ Example configured as mp3 player, featuring [> cmus <](https://cmus.github.io/)
 - for own dashboard configurations  
   [Dashboard Configuration](#dashboard-configuration)
 
-**tested**
-
- - Raspbian Jessie *Lite*
- - Raspberry Pi 2 B
- - Raspberry Pi B+
- - SainSmart LCD 480 x 320
- - WaveShare LCD 480 x 320
-
-**not tested**
-
-- Raspbian Jessie *Full* Desktop  
-  X-Windows may catch touch events
-
 - - -
 
 #### Install git directly
@@ -177,10 +164,8 @@ in this project HDMI output isn't used because of the LCD-Touch panel, so a HDMI
 
 #### LCD and Touch Config
 
-if your LCD does not run on Raspbian *Lite* yet, follow the steps given at  
-[LCD and Touch Lite](#lcd-and-touch-lite)
-
-Raspian *Full* versions with X-Windows have not been tested with Tosh yet
+if your LCD does not run on Raspbian yet, follow the steps given at  
+[LCD and Touch](#lcd-and-touch)
 
 also be sure that your touchscreen is set as input device, add the following line if necessary and reboot  
 `$ sudo nano /boot/config.txt`
@@ -192,22 +177,34 @@ dtoverlay=ads7846,speed=500000,penirq=17
 to check your input devices enter  
 `$ cat /proc/bus/input/devices`
 
+so far LCD and touch should work for consoles now and Tosh should run properly, to make LCD and touch available for Raspian desktop systems some more steps have to be accomplished
+
+- screen orientation
+- touch xy swap
+- touch axis inversion
+- touch calibration
+
+you will find detailed descriptions at
+[circuitbasics.com](http://www.circuitbasics.com/raspberry-pi-touchscreen-calibration-screen-rotation/)
+
 - - -
 
-#### LCD and Touch Lite
+#### LCD and Touch
 
-steps for installing LCD and touch on Raspian *Lite*
+steps for installing LCD and touch on Raspian *Jessie*
 
-check for current updates  
+install current updates  
 `$ sudo apt-get update`  
 `$ sudo apt-get upgrade`  
 `$ sudo apt-get clean`  
 
+(for Raspian *Lite*)  
 in order to do a firmware update that covers LCD framebuffer support, add rpi update script, current Raspbian versions with built in framebuffer support may make this step unnecessary  
 `$ sudo apt-get update`  
 `$ sudo apt-get install git`  
 `$ sudo wget https://raw.github.com/Hexxeh/rpi-update/master/rpi-update -O /usr/bin/rpi-update && sudo chmod +x /usr/bin/rpi-update`
 
+(for Raspian *Lite*)  
 now that we have the script, update the firmware and reboot  
 `$ sudo rpi-update`  
 `$ sudo reboot`  
@@ -255,7 +252,7 @@ options ads7846_device model=7846 cs=1 gpio_pendown=17 keep_vref_on=1 swap_xy=1 
 now check cmdline.txt and reboot  
 `$ sudo nano /boot/cmdline.txt`
 ```
-dwc_otg.lpm_enable=0 console=tty1 console=ttyAMA0,115200 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline rootwait fbcon=map:11 fbcon=font:ProFont6x11 fsck.repair=yes root wait
+dwc_otg.lpm_enable=0 console=tty1 console=ttyAMA0,115200 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline rootwait fbcon=map:11 fbcon=font:ProFont6x11 fsck.repair=yes fbtft_device.rotate=0 root wait
 ```
 `$ sudo reboot`
 
@@ -280,6 +277,18 @@ restart console to see changes
 - highly configurable
 - works with a wide variety of programs
 - low cpu load
+
+- - -
+
+#### Tested with
+
+ - Raspbian Jessie Lite
+ - Raspbian Jessie Full Desktop
+ - Raspberry Pi 3
+ - Raspberry Pi 2 B
+ - Raspberry Pi B+
+ - SainSmart LCD 480 x 320
+ - WaveShare LCD 480 x 320
 
 - - -
 
