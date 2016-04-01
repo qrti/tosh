@@ -1,6 +1,5 @@
 # Tosh - Touch on Shell
 
-##`>>> under construction <<<`
 
 #### **Adds touch screen abilities on shell level for Raspberry Pi**
 
@@ -36,8 +35,6 @@ Example configured as mp3 player, featuring [> cmus <](https://cmus.github.io/)
 
 **expansion**
 
-- to run without sudo  
-  [Run without sudo](#run-without-sudo)
 - for own dashboard configurations  
   [Dashboard Configuration](#dashboard-configuration)
 
@@ -56,17 +53,9 @@ clone Tosh repository
 
 - - -
 
-#### Run without sudo
-
-because Tosh reads from tty and vcsa devices it needs su rights
-
-(todo)
-
-- - -
-
 #### Dashboard Configuration
 
-dashboard configuration is done in [config.ini](https://github.com/qrti/tosh/blob/master/source/comfig.ini), grid size, tiles, shapes, colors, commands, start app, command line and some flags can be set, instructions are given in the comments of the file
+dashboard configuration is done in [config.ini](source/config.ini), grid size, tiles, shapes, colors, commands, start app, command line and some flags can be set, instructions are given in the comments of the file
 
 **symbols and functions** (used in config.ini)
 
@@ -121,7 +110,7 @@ if your run into trouble with dnet-common and libdnet
 
 - - - 
 
-#### Tips for cmus 
+#### Tips for cmus
 
 to auto resume cmus  
 `$ nano ~/.cmus/rc`
@@ -293,13 +282,14 @@ restart console to see changes
 
 #### Version History
 
-0.91 initial
+0.90 initial
+0.91 bug fixes
 
 - - -
 
 #### Donations
 
-Donations are welcome! 
+Donations are welcome!
 
 [![PayPal](images/paypal.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=E7JNEDMHAJ3TJ)
 
