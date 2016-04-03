@@ -9,13 +9,14 @@ Overlay dashboard for console applications, low cpu load, highly configurable ..
 
 Example configured as mp3 player, featuring [> cmus <](https://cmus.github.io/)
 
-[Tosh Demo](https://youtu.be/OJ_YkjgRMck) on YouTube
+Tosh Demo  
+[https://youtu.be/OJ_YkjgRMck](https://youtu.be/OJ_YkjgRMck)
 
 - - -
 
 **preparation**
 - for proper configured LCD and Touch  
-  [LCD and Touch Config](#lcd-and-touch-config)
+  [LCD and Touch](#lcd-and-touch)
 - optionally  
   [Install cmus](#install-cmus)
 
@@ -151,33 +152,22 @@ in this project HDMI output isn't used because of the LCD-Touch panel, so a HDMI
 
 - - -
 
-#### LCD and Touch Config
+#### LCD and Touch
 
 if your LCD does not run on Raspbian yet, follow the steps given at  
-[LCD and Touch](#lcd-and-touch)
+[LCD and Touch Config](#lcd-and-touch-config)
 
-also be sure that your touchscreen is set as input device, add the following line if necessary and reboot  
-`$ sudo nano /boot/config.txt`
-```
-dtoverlay=ads7846,speed=500000,penirq=17,swapxy=1
-```
-`$ sudo reboot`
+so far LCD and touch should work for consoles now and Tosh should run properly, to finish LCD and touch configuration for Raspian desktop systems two more steps have to be accomplished
 
-to check your input devices enter  
-`$ cat /proc/bus/input/devices`
-
-so far LCD and touch should work for consoles now and Tosh should run properly, to make LCD and touch available for Raspian desktop systems some more steps have to be accomplished
-
-- screen orientation
 - touch axis inversion
 - touch calibration
 
 find detailed descriptions at
-[circuitbasics.com](http://www.circuitbasics.com/raspberry-pi-touchscreen-calibration-screen-rotation/)
+[http://www.circuitbasics.com/raspberry-pi-touchscreen-calibration-screen-rotation/](http://www.circuitbasics.com/raspberry-pi-touchscreen-calibration-screen-rotation/)
 
 - - -
 
-#### LCD and Touch
+#### LCD and Touch Config
 
 steps for installing LCD and touch on Raspian *Jessie*
 
@@ -186,13 +176,13 @@ install current updates
 `$ sudo apt-get upgrade`  
 `$ sudo apt-get clean`  
 
-(for Raspian *Lite*)  
+(for Raspian Jessie *Lite*)  
 in order to do a firmware update that covers LCD framebuffer support, add rpi update script, current Raspbian versions with built in framebuffer support may make this step unnecessary  
 `$ sudo apt-get update`  
 `$ sudo apt-get install git`  
 `$ sudo wget https://raw.github.com/Hexxeh/rpi-update/master/rpi-update -O /usr/bin/rpi-update && sudo chmod +x /usr/bin/rpi-update`
 
-(for Raspian *Lite*)  
+(for Raspian Jessie *Lite*)  
 now that we have the script, update the firmware and reboot  
 `$ sudo rpi-update`  
 `$ sudo reboot`  
@@ -221,20 +211,20 @@ fbtft_device
 
 these next values will configure the display to landscape mode, Raspberry Pi board power plug on top side
 
-check flexfb.conf for *SainSmart* displays  
+check flexfb.conf  
 `$ sudo nano /etc/modprobe.d/flexfb.conf`
 ```
-options flexfb width=320 height=480 regwidth=16 init=-1,0xb0,0x0,-1,0x11,-2,250,-1,0x3A,0x55,-1,0xC2,0x44,-1,0xC5,0x00,0x00,0x00,0x00,-1,0xE0,0x0F,0x1F,0x1C,0x0C,0x0F,0x08,0x48,0x98,0x37,0x0A,0x13,0x04,0x11,0x0D,0x00,-1,0xE1,0x0F,0x32,0x2E,0x0B,0x0D,0x05,0x47,0x75,0x37,0x06,0x10,0x03,0x24,0x20,0x00,-1,0xE2,0x0F,0x32,0x2E,0x0B,0x0D,0x05,0x47,0x75,0x37,0x06,0x10,0x03,0x24,0x20,0x00,-1,0x36,0x28,-1,0x11,-1,0x29,-3  
-options fbtft_device debug=3 rotate=90 name=flexfb speed=16000000 gpios=reset:25,dc:24  
-options ads7846_device model=7846 cs=1 gpio_pendown=17 keep_vref_on=1 swap_xy=0 pressure_max=255 x_plate_ohms=60 x_min=200 x_max=3900 y_min=200 y_max=3900
-```
+options flexfb width=480 height=320 regwidth=16 init=-1,0xb0,0x0,-1,0x11,-2,250,-1,0x3A,0x55,-1,0xC2,0x44,-1,0xC5,0x00,0x00,0x00,0x00,-1,0xE0,0x0F,0x1F,0x1C,0x0C,0x0F,0x08,0x48,0x98,0x37,0x0A,0x13,0x04,0x11,0x0D,0x00,-1,0xE1,0x0F,0x32,0x2E,0x0B,0x0D,0x05,0x47,0x75,0x37,0x06,0x10,0x03,0x24,0x20,0x00,-1,0xE2,0x0F,0x32,0x2E,0x0B,0x0D,0x05,0x47,0x75,0x37,0x06,0x10,0x03,0x24,0x20,0x00,-1,0x36,0x28,-1,0x11,-1,0x29,-3
 
-and for *WaveShare* displays  
-`$ sudo nano /etc/modprobe.d/flexfb.conf`  
-```
-options flexfb width=480 height=320 regwidth=16 init=-1,0xb0,0x0,-1,0x11,-2,250,-1,0x3A,0x55,-1,0xC2,0x44,-1,0xC5,0x00,0x00,0x00,0x00,-1,0xE0,0x0F,0x1F,0x1C,0x0C,0x0F,0x08,0x48,0x98,0x37,0x0A,0x13,0x04,0x11,0x0D,0x00,-1,0xE1,0x0F,0x32,0x2E,0x0B,0x0D,0x05,0x47,0x75,0x37,0x06,0x10,0x03,0x24,0x20,0x00,-1,0xE2,0x0F,0x32,0x2E,0x0B,0x0D,0x05,0x47,0x75,0x37,0x06,0x10,0x03,0x24,0x20,0x00,-1,0x36,0xe8,-1,0x11,-1,0x29,-3  
-options fbtft_device debug=3 rotate=0 name=flexfb speed=16000000 gpios=reset:25,dc:24  
-options ads7846_device model=7846 cs=1 gpio_pendown=17 keep_vref_on=1 swap_xy=1 pressure_max=255 x_plate_ohms=60 x_min=200 x_max=3900 y_min=200 y_max=3900
+# for 180 degree lcd rotation use this line instead (waveshare display)
+# touch settings in /boot/config.txt and /etc/X11/xinit/xinitrc have to be adapted
+#options flexfb width=480 height=320 regwidth=16 init=-1,0xb0,0x0,-1,0x11,-2,250,-1,0x3A,0x55,-1,0xC2,0x44,-1,0xC5,0x00,0x00,0x00,0x00,-1,0xE0,0x0F,0x1F,0x1C,0x0C,0x0F,0x08,0x48,0x98,0x37,0x0A,0x13,0x04,0x11,0x0D,0x00,-1,0xE1,0x0F,0x32,0x2E,0x0B,0x0D,0x05,0x47,0x75,0x37,0x06,0x10,0x03,0x24,0x20,0x00,-1,0xE2,0x0F,0x32,0x2E,0x0B,0x0D,0x05,0x47,0x75,0x37,0x06,0x10,0x03,0x24,0x20,0x00,-1,0x36,0xe8,-1,0x11,-1,0x29,-3
+
+options fbtft_device debug=3 rotate=0 name=flexfb speed=16000000 gpios=reset:25,dc:24
+
+# seems to be ignored, now done in /boot/config.txt
+#options ads7846_device model=7846 cs=1 gpio_pendown=17 keep_vref_on=1 swap_xy=1 pressure_max=255 x_plate_ohms=60 x_min=200 x_max=3900 y_min=200 y_max=3900
+
 ```
 
 now check cmdline.txt and reboot  
@@ -242,7 +232,16 @@ now check cmdline.txt and reboot
 ```
 dwc_otg.lpm_enable=0 console=tty1 console=ttyAMA0,115200 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline rootwait fbcon=map:11 fbcon=font:ProFont6x11 fsck.repair=yes fbtft_device.rotate=0 root wait
 ```
+
+also be sure that your touchscreen is set as input device and swapxy is set correctly, edit the following line if necessary and reboot  
+`$ sudo nano /boot/config.txt`
+```
+dtoverlay=ads7846,speed=500000,penirq=17,swapxy=1
+```
 `$ sudo reboot`
+
+to check your input devices enter  
+`$ cat /proc/bus/input/devices`
 
 the output looks much better if you slim the console font  
 `$ sudo dpkg-reconfigure console-setup`  
