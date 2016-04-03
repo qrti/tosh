@@ -271,7 +271,7 @@ restart console to see changes
 
 - highly configurable
 - works with a wide variety of programs
-- graphical overlay lcd resolution independent
+- graphical overlay is lcd resolution independent
 - low cpu load
 
 - - -
