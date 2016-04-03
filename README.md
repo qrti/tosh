@@ -169,7 +169,7 @@ for sake of completeness, LCD and touch for Raspian desktop systems need two mor
 - touch axis inversion
 - touch calibration
 
-find detailed descriptions at
+find detailed descriptions at  
 [http://www.circuitbasics.com/raspberry-pi-touchscreen-calibration-screen-rotation/](http://www.circuitbasics.com/raspberry-pi-touchscreen-calibration-screen-rotation/)
 
 - - -
@@ -229,18 +229,19 @@ options flexfb width=480 height=320 regwidth=16 init=-1,0xb0,0x0,-1,0x11,-2,250,
 
 options fbtft_device debug=3 rotate=0 name=flexfb speed=16000000 gpios=reset:25,dc:24
 
-# seems to be ignored, now done in /boot/config.txt
+# seems to be ignored, equivalent settings now in /boot/config.txt
 #options ads7846_device model=7846 cs=1 gpio_pendown=17 keep_vref_on=1 swap_xy=1 pressure_max=255 x_plate_ohms=60 x_min=200 x_max=3900 y_min=200 y_max=3900
 
 ```
 
-now check cmdline.txt and reboot  
+now check cmdline.txt  
 `$ sudo nano /boot/cmdline.txt`
 ```
 dwc_otg.lpm_enable=0 console=tty1 console=ttyAMA0,115200 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline rootwait fbcon=map:11 fbcon=font:ProFont6x11 fsck.repair=yes fbtft_device.rotate=0 root wait
 ```
 
-also be sure that your touchscreen is set as input device and swapxy is set correctly, edit the following line if necessary and reboot  
+also be sure that your touchscreen is set as input device and swapxy is set correctly, edit the following line if necessary,  
+reboot after this last step  
 `$ sudo nano /boot/config.txt`
 ```
 dtoverlay=ads7846,speed=500000,penirq=17,swapxy=1
@@ -270,6 +271,7 @@ restart console to see changes
 
 - highly configurable
 - works with a wide variety of programs
+- graphical overlay lcd resolution independent
 - low cpu load
 
 - - -
@@ -288,7 +290,7 @@ restart console to see changes
 
 #### Version History
 
-0.90 initial
+0.90 initial  
 0.91 bug fixes
 
 - - -
@@ -304,7 +306,7 @@ Donations are welcome!
 #### Copyright
 Tosh is published under the terms of BSD license
 
-Copyright (c) 2016, [qrt@qland.de](mailto:qrt@qland.de)
+Copyright (c) 2016, [qrt@qland.de](mailto:qrt@qland.de)  
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
