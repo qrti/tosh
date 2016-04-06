@@ -1,28 +1,6 @@
-#### LCD and Touch
-
-if your LCD does not run on Raspbian yet, follow the steps given at  
-[LCD and Touch Config](#lcd-and-touch-config)
-
-so far LCD and touch should work on consoles now and Tosh should run properly, anyway sometimes it is necessary to swap and/or invert touch axis for some systems
-
-- axis swap is done in /boot/config.txt  
-  see [LCD and Touch Config](#lcd-and-touch-config)
-- axis inversion is done in section [TOUCHCON]  
-  of tosh [config.ini](source/config.ini)
-
-for sake of completeness, LCD and touch for Raspian desktop systems need two more steps to make X11 work correct
-
-- touch axis inversion
-- touch calibration
-
-find detailed descriptions at  
-[http://www.circuitbasics.com/raspberry-pi-touchscreen-calibration-screen-rotation/](http://www.circuitbasics.com/raspberry-pi-touchscreen-calibration-screen-rotation/)
-
-- - -
-
 #### LCD and Touch Config
 
-steps for installing LCD and touch on Raspian *Jessie*
+steps for installing LCD and touch on Raspian *Jessie* with SainSmart LCD 480 x 320 or WaveShare LCD 480 x 320, or similar displays even with other resolutions
 
 install current updates  
 `$ sudo apt-get update`  
@@ -96,6 +74,26 @@ to check your input devices enter
 
 after the last step reboot  
 `$ sudo reboot`
+
+
+
+
+- axis swap is done in /boot/config.txt  
+  see [LCD and Touch Config](#lcd-and-touch-config)
+- axis inversion is done in section [TOUCHCON]  
+  of tosh [config.ini](source/config.ini)
+
+for sake of completeness, LCD and touch for Raspian desktop systems need two more steps to make X11 work correct
+
+- touch axis inversion
+- touch calibration
+
+find detailed descriptions at  
+[http://www.circuitbasics.com/raspberry-pi-touchscreen-calibration-screen-rotation/](http://www.circuitbasics.com/raspberry-pi-touchscreen-calibration-screen-rotation/)
+
+
+
+
 
 the output looks much better if you slim the console font  
 `$ sudo dpkg-reconfigure console-setup`  
