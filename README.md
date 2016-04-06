@@ -157,7 +157,7 @@ in this project HDMI output isn't used because of the LCD-Touch panel, so a HDMI
 if your LCD does not run on Raspbian yet, follow the steps given at  
 [LCD and Touch Config](#lcd-and-touch-config)
 
-[LCD and Touch Config](#config/lcd_and_touch_config)
+[LCD and Touch Config](instruct/lcd_and_touch_config.md)
 
 so far LCD and touch should work on consoles now and Tosh should run properly, anyway sometimes it is necessary to swap and/or invert touch axis for some systems
 
