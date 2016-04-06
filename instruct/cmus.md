@@ -1,5 +1,7 @@
 #### Install cmus
 
+as an example for using Tosh, the following steps will install cmus mp3 player
+
 install cmus without recommends to prevent possible dnet-common and libdnet trouble  
 `$ sudo aptitude -R install cmus`
 
@@ -57,7 +59,7 @@ in this project HDMI output isn't used because of the LCD-Touch panel, so a HDMI
 
 #### Dashboard Configuration
 
-dashboard configuration is done in [config.ini](source/config.ini), grid size, tiles, shapes, colors, commands, start app, command line and some flags can be set, instructions are given in the comments of the file
+Tosh dashboard configuration is done in [config.ini](../source/config.ini), grid size, tiles, shapes, colors, commands, start app, command line and some flags can be set, instructions are given in the comments of the file
 
 **symbols and functions** (used in config.ini)
 
@@ -94,4 +96,6 @@ dashboard configuration is done in [config.ini](source/config.ini), grid size, t
 
 complete list of [cmus functions and keys](https://github.com/cmus/cmus/blob/master/Doc/cmus.txt)
 
+- - -
 
+[back to readme](../README.md)

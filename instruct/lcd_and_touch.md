@@ -1,6 +1,6 @@
 #### LCD and Touch Config
 
-steps for installing LCD and touch on Raspian *Jessie* with SainSmart LCD 480 x 320 or WaveShare LCD 480 x 320, or similar displays even with other resolutions
+steps for installing LCD and touch on Raspian *Jessie* with SainSmart, WaveShare, or similar displays
 
 install current updates  
 `$ sudo apt-get update`  
@@ -75,15 +75,16 @@ to check your input devices enter
 after the last step reboot  
 `$ sudo reboot`
 
+- - -
 
-
+if the touch screen is responsive but touches appear on wrong place, consider the following
 
 - axis swap is done in /boot/config.txt  
-  see [LCD and Touch Config](#lcd-and-touch-config)
-- axis inversion is done in section [TOUCHCON]  
-  of tosh [config.ini](source/config.ini)
+  look some lines above
+- axis inversion and touch limits are configured in
+  section [TOUCHCON] of tosh [config.ini](../source/config.ini)
 
-for sake of completeness, LCD and touch for Raspian desktop systems need two more steps to make X11 work correct
+Tosh should work for command line apps properly now, for sake of completeness, LCD and touch for Raspian desktop systems need two more steps to make x windows work correct
 
 - touch axis inversion
 - touch calibration
@@ -91,11 +92,9 @@ for sake of completeness, LCD and touch for Raspian desktop systems need two mor
 find detailed descriptions at  
 [http://www.circuitbasics.com/raspberry-pi-touchscreen-calibration-screen-rotation/](http://www.circuitbasics.com/raspberry-pi-touchscreen-calibration-screen-rotation/)
 
+- - -
 
-
-
-
-the output looks much better if you slim the console font  
+output looks much better if you slim the console font  
 `$ sudo dpkg-reconfigure console-setup`  
 *UTF-8 / Guess optimal character set / Terminus / 8 x 14*  
 or  
@@ -108,3 +107,7 @@ FONTSIZE="8x14"
 
 restart console to see changes  
 `$ sudo /etc/init.d/console-setup restart`
+
+- - -
+
+[back to readme](../README.md)
