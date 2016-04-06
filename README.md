@@ -80,6 +80,7 @@ so far LCD and touch should work on consoles now and Tosh should run properly, a
  - Raspberry Pi B+
  - SainSmart LCD 480 x 320
  - WaveShare LCD 480 x 320
+ - should work well with other displays and resolutions
 
 - - -
 
