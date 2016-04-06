@@ -77,14 +77,14 @@ after the last step reboot
 
 - - -
 
-if the touch screen is responsive but touches appear on wrong place, consider the following
+so far LCD and touch should work on the command line now and Tosh should run properly, anyway sometimes it is necessary to swap and invert touch axis or set touch limits on some systems
 
 - axis swap is done in /boot/config.txt  
   look some lines above
-- axis inversion and touch limits are configured in
+- axis inversion and touch limits are set in
   section [TOUCHCON] of tosh [config.ini](../source/config.ini)
 
-Tosh should work for command line apps properly now, for sake of completeness, LCD and touch for Raspian desktop systems need two more steps to make x windows work correct
+for sake of completeness, LCD and touch for Raspian desktop systems need two more steps to make x windows work correct (not needed for Tosh)
 
 - touch axis inversion
 - touch calibration
@@ -94,7 +94,7 @@ find detailed descriptions at
 
 - - -
 
-output looks much better if you slim the console font  
+last but not least, output looks much better on your LCD if you slim the console font  
 `$ sudo dpkg-reconfigure console-setup`  
 *UTF-8 / Guess optimal character set / Terminus / 8 x 14*  
 or  
