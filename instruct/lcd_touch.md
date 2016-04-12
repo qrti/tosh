@@ -60,7 +60,7 @@ options fbtft_device debug=3 rotate=0 name=flexfb speed=16000000 gpios=reset:25,
 now check cmdline.txt  
 `$ sudo nano /boot/cmdline.txt`
 ```
-dwc_otg.lpm_enable=0 console=tty1 console=ttyAMA0,115200 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline rootwait fbcon=map:11 fbcon=font:ProFont6x11 fsck.repair=yes fbtft_device.rotate=0 root wait
+dwc_otg.lpm_enable=0 console=serial0,115200 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=yes fbcon=map:11 fbcon=font:ProFont6x11 fbtft_device.rotate=0 rootwait
 ```
 
 also be sure that your touchscreen is set as input device and swapxy is set correctly, edit the following line if necessary  
