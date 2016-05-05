@@ -5,6 +5,8 @@
 // Copyright (c) 2016, qrt@qland.de 
 // All rights reserved
 
+// V0.92    bugfix in Dash::refresh()
+
 #include "framebuffer.h"
 #include "draw.h"
 #include "dash.h"
@@ -61,24 +63,24 @@ void Dash::initTiles(uint16_t xres, uint16_t yres)
 
 void Dash::refresh()
 {
-    if(visible){                        // dash visible
-        con->setMode(KD_GRAPHICS);
-        setColor(2);                    // tile line color
-        
-        for(uint16_t x=sidex; x<xres; x+=sidex)
-            Draw::line(x, 0, x, yres-1);
-        
-        for(uint16_t y=sidey; y<yres; y+=sidey)
-            Draw::line(0, y, xres-1, y);    
-            
-        uint16_t s = sidex < sidey ? sidex : sidey;
-            
-        for(uint16_t x=0; x<tilesx; x++)
-            for(uint16_t y=0; y<tilesy; y++)
-                drawTile(tile+y*tilesx+x, s);
-                
-        frb->copy();        
-        con->setMode(KD_TEXT);
+    if(visible){                                        // dash visible
+        setColor(2);                                    // tile line color
+                                                        
+        for(uint16_t x=sidex; x<xres; x+=sidex)         // draw tile lines 
+            Draw::line(x, 0, x, yres-1);                // to hidden HDMI framebuffer
+                                                        
+        for(uint16_t y=sidey; y<yres; y+=sidey)         
+            Draw::line(0, y, xres-1, y);                
+                                                        
+        uint16_t s = sidex < sidey ? sidex : sidey;     // side length
+                                                        
+        for(uint16_t x=0; x<tilesx; x++)                // draw tiles
+            for(uint16_t y=0; y<tilesy; y++)            
+                drawTile(tile+y*tilesx+x, s);           
+                                       
+        con->setMode(KD_GRAPHICS);                      // set TFT console to graphics mode                
+        frb->copy();                                    // copy HDMI framebuffer to TFT framebuffer
+        con->setMode(KD_TEXT);                          // set TFT console to text mode
     }
     
     nRefresh = false;

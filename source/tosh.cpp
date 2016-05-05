@@ -1,4 +1,4 @@
-// tosh.cpp V0.91 - touch on shell
+// tosh.cpp V0.92 - touch on shell
 //
 // published under the terms of BSD 2-clause license
 // Copyright (c) 2016, qrt@qland.de 
@@ -6,6 +6,7 @@
 
 // V0.9     initial version
 // V0.91    corrections, fixes
+// V0.92    bugfix in Dash::refresh()
 
 #include "ini.h"
 #include "process.h"
@@ -23,7 +24,7 @@ bool quit=false;                // global declaration for dash.h
 
 int main(int argc, char* argv[])
 {
-    printf("tosh V0.91 160330 (c) qrt@qland.de\n");
+    printf("tosh V0.92 160505 (c) qrt@qland.de\n");
     sleep(2);
     
     Ini config;

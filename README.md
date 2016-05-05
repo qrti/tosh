@@ -78,7 +78,8 @@ clone Tosh repository
 #### Version History
 
 0.90 initial  
-0.91 bug fixes
+0.91 bug fixes  
+0.92 bug fix dash refresh
 
 - - -
 
