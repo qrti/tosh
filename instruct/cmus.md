@@ -67,10 +67,10 @@ Tosh dashboard configuration is done in [config.ini](../source/config.ini), grid
 
 |function    |function     |function    |function     |touch          |
 |------------|-------------|------------|-------------|---------------|
-|library<br>-|copy<br>-    |file<br>-   |hide<br>quit |*short<br>long*|
+|library<br>-|copy<br>-    |file<br>-   |hide<br>off  |*short<br>long*|
 |window<br>- |remove<br>-  |-<br>-      |-<br>-       |*short<br>long*|
 |expand<br>- |prev<br>back+|next<br>fwd+|up<br>up+    |*short<br>long*|
-|stop<br>-   |pause<br>-   |play<br>-   |down<br>down+|*short<br>long*|
+|stop<br>quit|pause<br>-   |play<br>-   |down<br>down+|*short<br>long*|
 \+ repeat
 
 **functions and keys**
